@@ -10,7 +10,6 @@ module Wonga
         @logger.info "Returning started event for Request:#{message['pantry_request_id']}, Name:#{message['instance_name']}"
         message[:event] = :started
         @api_client.send_put_request("/api/ec2_instances/#{message['id']}", message)
-        @logger.info "Returned started event for Request:#{message['pantry_request_id']}, Name:#{message['instance_name']} succeeded"
       end
     end
   end
